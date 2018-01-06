@@ -12,37 +12,67 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>MyDetails</title>
 </head>
-<body background="background.jpg">
-
-	<div ng-app="myprofile" ; ng-controller="myCtrl"
-		;
-		class="text-center container-fluid row" style="margin-top: 4%;">
-		<div ng-show="details">
+<body background="5.jpg">
+	<div ng-app="myprofile" ; ng-controller="myCtrl">
+		<div class="col-md-10"></div>
+		<div ng-show=value>
+			<button type="button" class="btn btn-primary" style="margin-top: 2%;"
+				ng-click=refresh()>Back</button>
+		</div>
+		<div class="text-center container-fluid row" style="margin-top: 4%;"
+			ng-show="details">
 			<h2 style="color: AntiqueWhite;">
-				<u> Please Find Out My Details Below</u>
+				<u> Please Find Out My Details Below:</u>
 			</h2>
-			<h4 style="margin-top: 4%; color: white;">
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-3" style="margin-top: 4%" ng-show="details">
+			<h3 style="color: AntiqueWhite; margin-bottom: 5%;">
+				<u>Personal Details:</u>
+			</h3>
+			<h4 style="color: white;">
 				<form ng-repeat="x in DetailsList">
 					<p>{{x.name}}
 					<p>
-					<p>{{x.comp}}
+					<p>{{x.email}}
 					<p>
-					<p>{{x.tech}}
+					<p>{{x.phn}}
+					<p>{{x.plc}}
+					<p>
+				
+				</form>
+
+					
+			</h4>
+			</div>
+			<div class="col-md-1">
+			<button ng-show="details" type="button" class="btn btn-primary"
+				ng-click=open(); style="margin-top: 400%">My
+				Resume</button>
+		</div>
+		<div class="col-md-4"  style="margin-top: 3%; margin-left: 5%" ng-show="details">
+		<h3 style="color: AntiqueWhite; margin-bottom: 4%;">
+				<u>Company And Experience:</u>
+		</h3>
+			<h4 style="color: white;">
+				<form ng-repeat="x in companyList">
+					<p>{{x.cname}}
 					<p>
 					<p>{{x.exp}}
 					<p>
+					<p>{{x.tech}}
+					<p>{{x.fwork}}
+					<p>
+				
 				</form>
-			</h4>
-
-			<button type="button" class="btn btn-primary" ng-click=open(); style=" margin-top: 2%">Open
-				Resume</button>
+		
 		</div>
-		<div ng-show=value>
-			{{value1}} <img ng-src="1.jpg" />
+		<div ng-show="value" style="margin-left: 10%;margin-top: 1%">  
+			 <img ng-src="1.jpg" width="1100" height="1100" />
 		</div>
 	</div>
 
-	</form>
+	
 
 
 
@@ -57,12 +87,22 @@
 		$scope.DetailsList = [ {
 			'name' : 'Name:      Pritam Kumar Dixit'
 		}, {
-			'comp' : 'Company:   Infosys Limited'
+			'email' : 'Email Id:   pritamkumar.dixit@gmail.com'
 		}, {
-			'tech' : 'Technologies: Java,Angular JS,Spring Framework, Web Services'
+			'phn' : 'Phone Number: 9886757528'
 		}, {
-			'exp' : 'Experience: 1.6 Year'
+			'plc' : 'Place: Mysore'
 		} ];
+		$scope.companyList = [ {
+			'cname' : 'Company:      Infosys Limited'
+		}, {
+			'exp' : 'Experience:   1.6 Year'
+		}, {
+			'tech' : 'Technologies: Java,J2EE,Web Services,HTML5,Python'
+		}, {
+			'fwork' : 'FrameWorks: Angular Js,Spring FrameWork,Hibernate'
+		} ];
+
 
 		$scope.value = false;
 		$scope.details = true;
@@ -70,10 +110,17 @@
 			$scope.details = false;
 			$scope.value = true;
 		}
+
+		$scope.refresh = function() {
+			$scope.value = false;
+			$scope.details = true;
+		}
 	});
 </script>
 
 </html>
+
+
 
 
 
