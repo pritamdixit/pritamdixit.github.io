@@ -12,7 +12,7 @@
 </head>
 <body background="5.jpg">
 	<div ng-app="myprofile" ; ng-controller="myCtrl" class="container-fluid row">
-		<div class="text-center container-fluid row" style="margin-top: 4%;"
+		<div class="text-center" style="margin-top: 4%;"
 			ng-show="details">
 			<h2 style="color: AntiqueWhite;">
 				<u> Please Find Out My Details Below:</u>
@@ -60,6 +60,9 @@
 				</form>
 		
 		</div>
+		<div class="col-md-12" style="margin-top: 1%; margin-left: 92%">
+		<button type="button" class="btn btn-primary" ng-click="refresh()" ng-show="value">Back</button>
+		</div>
 		<div ng-show="value" style="margin-left: 10%;margin-top: 1%">  
 			 <img ng-src="1.jpg" width="1100" height="1100" />
 		</div>
@@ -95,15 +98,12 @@
 		}, {
 			'fwork' : 'FrameWorks: Angular Js,Spring FrameWork,Hibernate'
 		} ];
-
-
 		$scope.value = false;
 		$scope.details = true;
 		$scope.open = function() {
 			$scope.details = false;
 			$scope.value = true;
 		}
-
 		$scope.refresh = function() {
 			$scope.value = false;
 			$scope.details = true;
@@ -112,7 +112,6 @@
 </script>
 
 </html>
-
 
 
 
