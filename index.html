@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>MyDetails</title>
+</head>
 <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+	<div ng-app="myprofile" ; ng-controller="myCtrl"
+		;
+		class="text-center container-fluid row" style="margin-top: 4%;">
+		<div ng-show="details">
+			<h2 style="color: gray">
+				<u> Please Find Out My Deails Below</u>
+			</h2>
+			<h4 style="margin-top: 4%;">
+				<form ng-repeat="x in DetailsList">
+					<p>{{x.name}}
+					<p>
+					<p>{{x.comp}}
+					<p>
+					<p>{{x.tech}}
+					<p>
+					<p>{{x.exp}}
+					<p>
+				</form>
+			</h4>
+
+			<button type="button" class="btn btn-primary" ng-click=open();>Open
+				Resume</button>
+		</div>
+		<div ng-show=value>
+			{{value1}} <img ng-src="1.jpg" />
+		</div>
+	</div>
+
+	</form>
+
+
+
+
+
 
 </body>
+
+<script>
+	var app = angular.module("myprofile", []);
+	app.controller("myCtrl", function($scope) {
+		$scope.DetailsList = [ {
+			'name' : 'Name:      Pritam Kumar Dixit'
+		}, {
+			'comp' : 'Company:   Infosys Limited'
+		}, {
+			'tech' : 'Technologies: Java,Angular JS,Spring Frame work'
+		}, {
+			'exp' : 'Experience: 1.7 Year'
+		} ];
+
+		$scope.value = false;
+		$scope.details = true;
+		$scope.open = function() {
+			$scope.details = false;
+			$scope.value = true;
+		}
+	});
+</script>
+
 </html>
-Try it Yourself »
+
+
+
