@@ -12,16 +12,16 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>MyDetails</title>
 </head>
-<body>
+<body background="5.jpg">
 
 	<div ng-app="myprofile" ; ng-controller="myCtrl"
 		;
 		class="text-center container-fluid row" style="margin-top: 4%;">
 		<div ng-show="details">
-			<h2 style="color: gray">
+			<h2 style="color: AntiqueWhite;">
 				<u> Please Find Out My Deails Below</u>
 			</h2>
-			<h4 style="margin-top: 4%;">
+			<h4 style="margin-top: 4%; color: white;">
 				<form ng-repeat="x in DetailsList">
 					<p>{{x.name}}
 					<p>
@@ -34,7 +34,7 @@
 				</form>
 			</h4>
 
-			<button type="button" class="btn btn-primary" ng-click=open(); style=" margin-top: 2%";>See My
+			<button type="button" class="btn btn-primary" ng-click=open(); style=" margin-top: 2%">Open
 				Resume</button>
 		</div>
 		<div ng-show=value>
@@ -59,7 +59,7 @@
 		}, {
 			'comp' : 'Company:   Infosys Limited'
 		}, {
-			'tech' : 'Technologies: Java, Angular JS,Spring Frame work,Web Service'
+			'tech' : 'Technologies: Java,Angular JS,Spring Framework, Web Services'
 		}, {
 			'exp' : 'Experience: 1.6 Year'
 		} ];
