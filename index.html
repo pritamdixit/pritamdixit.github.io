@@ -11,64 +11,67 @@
 <title>MyDetails</title>
 </head>
 <body background="5.jpg">
-	<div ng-app="myprofile" ; ng-controller="myCtrl" class="container-fluid row">
-		<div class="text-center" style="margin-top: 4%;"
-			ng-show="details">
+	<div ng-app="myprofile" ; ng-controller="myCtrl"
+		class="container-fluid">
+		<div class="text-center" style="margin-top: 4%;" ng-show="details">
 			<h2 style="color: AntiqueWhite;">
 				<u> Please Find Out My Details Below:</u>
 			</h2>
 		</div>
-		<div class="col-md-2"></div>
-		<div class="col-md-3" style="margin-top: 4%" ng-show="details">
-			<h3 style="color: AntiqueWhite; margin-bottom: 5%;">
-				<u>Personal Details:</u>
-			</h3>
-			<h4 style="color: white;">
-				<form ng-repeat="x in DetailsList">
-					<p>{{x.name}}
-					<p>
-					<p>{{x.email}}
-					<p>
-					<p>{{x.phn}}
-					<p>{{x.plc}}
-					<p>
-				
-				</form>
+		<div class="row">
+			<div class="col-md-2 col-sm-2 col-xs-2"></div>
+			<div class="col-md-4 col-sm-2 col-xs-2" style="margin-top: 4%" ng-show="details">
+				<h3 style="color: AntiqueWhite; margin-bottom: 5%;">
+					<u>Personal Details:</u>
+				</h3>
+				<h4 style="color: white;">
+					<form ng-repeat="x in DetailsList">
+						<p>{{x.name}}
+						<p>
+						<p>{{x.email}}
+						<p>
+						<p>{{x.phn}}
+						<p>{{x.plc}}
+						<p>
+					</form>
 
-					
-			</h4>
+
+				</h4>
 			</div>
-			<div class="col-md-1">
-			<button ng-show="details" type="button" class="btn btn-primary"
-				ng-click=open(); style="margin-top: 400%">My
-				Resume</button>
+			<div class="col-md-4 col-sm-2 col-xs-2" style="margin-top: 3%; margin-left: 5%"
+				ng-show="details">
+				<h3 style="color: AntiqueWhite; margin-bottom: 4%;">
+					<u>Company And Experience:</u>
+				</h3>
+				<h4 style="color: white;">
+					<form ng-repeat="x in companyList">
+						<p>{{x.cname}}
+						<p>
+						<p>{{x.exp}}
+						<p>
+						<p>{{x.tech}}
+						<p>{{x.fwork}}
+						<p>
+					</form>
+			</div>
 		</div>
-		<div class="col-md-4"  style="margin-top: 3%; margin-left: 5%" ng-show="details">
-		<h3 style="color: AntiqueWhite; margin-bottom: 4%;">
-				<u>Company And Experience:</u>
-		</h3>
-			<h4 style="color: white;">
-				<form ng-repeat="x in companyList">
-					<p>{{x.cname}}
-					<p>
-					<p>{{x.exp}}
-					<p>
-					<p>{{x.tech}}
-					<p>{{x.fwork}}
-					<p>
-				
-				</form>
-		
+		<div class="row">
+			<div class="col-md-5 col-sm-5 col-xs-5"></div>
+			<div class="col-md-1 col-sm-1 col-xs-1" >
+				<button ng-show="details" type="button" class="btn btn-primary"
+					ng-click=open(); style="margin-top: 15%">My Resume</button>
+			</div>
 		</div>
-		<div class="col-md-12" style="margin-top: 1%; margin-left: 92%">
-		<button type="button" class="btn btn-primary" ng-click="refresh()" ng-show="value">Back</button>
+		<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 1%; margin-left: 92%">
+			<button type="button" class="btn btn-primary" ng-click="refresh()"
+				ng-show="value">Back</button>
 		</div>
-		<div ng-show="value" style="margin-left: 10%;margin-top: 1%">  
-			 <img ng-src="1.jpg" width="1100" height="1100" />
+		<div ng-show="value" style="margin-left: 10%; margin-top: 1%">
+			<img ng-src="1.jpg" width="1100" height="1100" />
 		</div>
 	</div>
 
-	
+
 
 
 
@@ -112,6 +115,8 @@
 </script>
 
 </html>
+
+
 
 
 
